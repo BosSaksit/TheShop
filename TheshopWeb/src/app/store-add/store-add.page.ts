@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core/';
 import { Router } from '@angular/router';
 import { CallapiService } from '../service/callapi.service';
 import { product } from '../models/product';
