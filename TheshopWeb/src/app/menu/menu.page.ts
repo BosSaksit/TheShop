@@ -1,6 +1,6 @@
+import { MenuController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterEvent } from '@angular/router';
-import { MenuController } from '@ionic/angular';
 import { CallapiService } from '../service/callapi.service';
 
 @Component({
@@ -22,12 +22,7 @@ export class MenuPage implements OnInit {
   }
 
   openmenu(){
-    // this.menuCtrl.enable(true, 'first');
-    
     console.log("xxx");
     
   }
-
- 
-
 }
