@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar text-center>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>ProductList</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center>
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col></ion-col>
+    <ion-col text-end>
+      <ion-button (click)="gotoProductAddEdit()" color="dark">เพิ่มข้อมูลสินค้า
+        <ion-icon slot="start" name="add"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col size="6">
+      <ion-searchbar placeholder="ค้นหาชื่อสินค้า"></ion-searchbar>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+
+  <br><br>
+  <ion-row>
+    <ion-col>
+      <h5>รหัสสินค้า</h5>
+    </ion-col>
+    <ion-col>
+      <h5>ชื่อสินค้า</h5>
+    </ion-col>
+    <ion-col>
+      <h5>ยี่ห้อ</h5>
+    </ion-col>
+    <ion-col>
+      <h5>รุ่น</h5>
+    </ion-col>
+    <ion-col>
+      <h5>จำนวนทั้งหมด</h5>
+    </ion-col>
+    <ion-col>
+      <h5> ดูข้อมูล</h5>
+    </ion-col>
+    <ion-col>
+      <h5>แก้ไข</h5>
+    </ion-col>
+    <ion-col>
+      <h5>ลบ</h5>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngFor="let p of productall">
+    <ion-col>{{ p.idProduct }}</ion-col>
+    <ion-col>{{ p.nameProduct }}</ion-col>
+    <ion-col>{{ p.brandProduct }}</ion-col>
+    <ion-col>{{ p.genProduct }}</ion-col>
+    <ion-col>{{ p.totalProduct}}</ion-col>
+    <ion-col>
+      <ion-button (click)="todetail(p.idProduct)">
+        <ion-icon name="eye"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button (click)="toProductAddEdit(p.idProduct)">
+        <ion-icon name="create"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button (click)="delProduct(p.idProduct)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-button (click)="openmenu()">Openmenu</ion-button>
+  <ion-button routerLink="/store-list">store</ion-button>
+</ion-content>

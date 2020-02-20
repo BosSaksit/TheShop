@@ -1,0 +1,14 @@
+D:\Work\TheShop\TheshopApi\bin\Debug\netcoreapp2.2\TheshopApi.deps.json
+D:\Work\TheShop\TheshopApi\bin\Debug\netcoreapp2.2\TheshopApi.runtimeconfig.json
+D:\Work\TheShop\TheshopApi\bin\Debug\netcoreapp2.2\TheshopApi.runtimeconfig.dev.json
+D:\Work\TheShop\TheshopApi\bin\Debug\netcoreapp2.2\TheshopApi.dll
+D:\Work\TheShop\TheshopApi\bin\Debug\netcoreapp2.2\TheshopApi.pdb
+D:\Work\TheShop\TheshopApi\obj\Debug\netcoreapp2.2\TheshopApi.csprojAssemblyReference.cache
+D:\Work\TheShop\TheshopApi\obj\Debug\netcoreapp2.2\TheshopApi.csproj.CoreCompileInputs.cache
+D:\Work\TheShop\TheshopApi\obj\Debug\netcoreapp2.2\TheshopApi.RazorAssemblyInfo.cache
+D:\Work\TheShop\TheshopApi\obj\Debug\netcoreapp2.2\TheshopApi.RazorAssemblyInfo.cs
+D:\Work\TheShop\TheshopApi\obj\Debug\netcoreapp2.2\TheshopApi.AssemblyInfoInputs.cache
+D:\Work\TheShop\TheshopApi\obj\Debug\netcoreapp2.2\TheshopApi.AssemblyInfo.cs
+D:\Work\TheShop\TheshopApi\obj\Debug\netcoreapp2.2\TheshopApi.RazorTargetAssemblyInfo.cache
+D:\Work\TheShop\TheshopApi\obj\Debug\netcoreapp2.2\TheshopApi.dll
+D:\Work\TheShop\TheshopApi\obj\Debug\netcoreapp2.2\TheshopApi.pdb

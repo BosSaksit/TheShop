@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar text-center>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>   
+      <ion-title>รายชื่อลูกค้า</ion-title>  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center>
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col></ion-col>
+    <ion-col text-end>
+      <ion-button color="dark" (click)="toAddEditCustomer()">
+        <ion-icon slot="start" name="add"></ion-icon>เพิ่มข้อมูลลูกค้า
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col size="6">
+      <ion-searchbar placeholder="ค้นหาชื่อลูกค้า"></ion-searchbar>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <h5>รหัสลูกค้า</h5>
+    </ion-col>
+    <ion-col>
+      <h5>ชื่อลูกค้า</h5>
+    </ion-col>
+    <ion-col>
+      <h5>เบอร์โทรลูกค้า</h5>
+    </ion-col>
+    <ion-col>
+      <h5>ระดับสมาชิก</h5>
+    </ion-col>
+    <ion-col>
+      <h5>แก้ไขข้อมูล</h5>
+    </ion-col>
+    <ion-col>
+      <h5>ลบข้อมูล</h5>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngFor="let c of getallCustomer2">
+    <ion-col>
+      <h6>{{ c.idCustomer }}</h6>
+    </ion-col>
+    <ion-col>
+      <h6>{{ c.nameCustomer }}</h6>
+    </ion-col>
+    <ion-col>
+      <h6>{{ c.telCustomer }}</h6>
+    </ion-col>
+    <ion-col>
+      <h6>{{ c.levelCustomer }}</h6>
+    </ion-col>
+
+    <ion-col>
+      <ion-button color="warning" (click)="toAddEditCustomer(c.idCustomer)">
+        <ion-icon name="create"></ion-icon>
+      </ion-button>
+    </ion-col>
+
+    <ion-col>
+      <ion-button color="danger" (click)="delCustomer(c.idCustomer)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

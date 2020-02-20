@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>CustomerAddEdit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center>
+  <br><br>
+
+  <form [formGroup]="customerData" (ngSubmit)="checkaction()">  
+  <ion-row>
+    <ion-col>
+      <ion-item class="border-ion-item" [class.invalid]="submitRequested && f.idCustomer.errors">
+        <ion-label>รหัสลูกค้า : </ion-label>
+        <ion-input formControlName="idCustomer" type="text" placeholder="รหัสลูกค้า"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="submitRequested && f.idCustomer.errors">
+        <span class="invalid-msg">
+          กรอกรหัสลูกค้า
+        </span>
+      </ion-item>
+    </ion-col>
+
+    <ion-col>
+      <ion-item class="border-ion-item" [class.invalid]="submitRequested && f.nameCustomer.errors">
+        <ion-label>ชื่อ-นามสกุล : </ion-label>
+        <ion-input formControlName="nameCustomer" type="text" placeholder="ชื่อ-นามสกุล ลูกค้า"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="submitRequested && f.nameCustomer.errors">
+        <span class="invalid-msg">
+          กรอกชื่อ-นามสกุล
+        </span>
+      </ion-item>
+    </ion-col>
+
+    <ion-col>
+      <ion-item class="border-ion-item" [class.invalid]="submitRequested && f.telCustomer.errors">
+        <ion-label>เบอร์โทร : </ion-label>
+        <ion-input formControlName="telCustomer" type="text" placeholder="เบอร์โทรลูกค้า"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="submitRequested && f.telCustomer.errors">
+        <span class="invalid-msg">
+          กรอกเบอร์โทร
+        </span>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="8">
+      <ion-item class="border-ion-item" [class.invalid]="submitRequested && f.addressCustomer.errors">
+        <ion-label>ที่อยู่ : </ion-label>
+        <ion-input formControlName="addressCustomer" type="text" placeholder="ที่อยู่ลูกค้า"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="submitRequested && f.addressCustomer.errors">
+        <span class="invalid-msg">
+          กรอกที่อยู่
+        </span>
+      </ion-item>
+    </ion-col>
+
+    <ion-col>
+      <ion-item class="border-ion-item" [class.invalid]="submitRequested && f.levelCustomer.errors">
+        <ion-label>ระดับสมาชิก : </ion-label>
+        <ion-select formControlName="levelCustomer" interface="popover" placeholder="โปรดเลือกระดับ">
+          <ion-select-option value="VIP">VIP</ion-select-option>
+          <ion-select-option value="VVIP">VVIP</ion-select-option>
+          <ion-select-option value="VVVIP">VVVIP</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="submitRequested && f.levelCustomer.errors">
+        <span class="invalid-msg">
+          เลือกระดับสมาชิก
+        </span>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <br>
+<ion-button color="success" type="submit">ตกลง</ion-button>
+</form>
+
+</ion-content>

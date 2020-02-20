@@ -1,0 +1,154 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ProductAddEdit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center>
+
+  <br>
+  <form [formGroup]="productData" (ngSubmit)="checkaction()">
+  <ion-row>
+    <ion-col>
+      <ion-item class="border-ion-item" [class.invalid]="submitRequested && f.idProduct.errors">
+        <ion-label>รหัสสินค้า : </ion-label>
+        <ion-input formControlName="idProduct" type="text" placeholder="รหัสสินค้า" [readonly]="getRead"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="submitRequested && f.idProduct.errors">
+        <span class="invalid-msg">
+          กรอกรหัสสินค้า
+        </span>
+      </ion-item>
+    </ion-col>
+
+    <ion-col>
+      <ion-item class="border-ion-item" [class.invalid]="submitRequested && f.nameProduct.errors">
+        <ion-label>ชื่อสินค้า : </ion-label>
+        <ion-input formControlName="nameProduct" type="text" placeholder="ชื่อสินค้า" [readonly]="getRead"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="submitRequested && f.nameProduct.errors">
+        <span class="invalid-msg">
+          กรอกชื่อสินค้า
+        </span>
+      </ion-item>
+    </ion-col>
+
+    <ion-col>
+      <ion-item class="border-ion-item" [class.invalid]="submitRequested && f.typeProduct.errors">
+        <ion-label>ประเภท : </ion-label>
+        <ion-input formControlName="typeProduct" type="text" placeholder="ประเภท" [readonly]="getRead"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="submitRequested && f.typeProduct.errors">
+        <span class="invalid-msg">
+          กรอกประเภท
+        </span>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  
+  <ion-row>
+    <ion-col>
+      <ion-item class="border-ion-item" [class.invalid]="submitRequested && f.brandProduct.errors">
+        <ion-label>ยี่ห้อ : </ion-label>
+        <ion-input formControlName="brandProduct" type="text" placeholder="ยี่ห้อ" [readonly]="getRead"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="submitRequested && f.brandProduct.errors">
+        <span class="invalid-msg">
+          กรอกยี่ห้อ
+        </span>
+      </ion-item>
+    </ion-col>
+
+    <ion-col>
+      <ion-item class="border-ion-item" [class.invalid]="submitRequested && f.genProduct.errors">
+        <ion-label>รุ่น : </ion-label>
+        <ion-input formControlName="genProduct" type="text" placeholder="รุ่น" [readonly]="getRead"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="submitRequested && f.genProduct.errors">
+        <span class="invalid-msg">
+          กรอกรุ่น
+        </span>
+      </ion-item>
+    </ion-col>
+
+    <ion-col>
+      <ion-item class="border-ion-item" [class.invalid]="submitRequested && f.detailProduct.errors">
+        <ion-label>รายละเอียด : </ion-label>
+        <ion-input formControlName="detailProduct" type="text" placeholder="รายละเอียด" [readonly]="getRead"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="submitRequested && f.detailProduct.errors">
+        <span class="invalid-msg">
+          กรอกรายละเอียด
+        </span>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-item class="border-ion-item" [class.invalid]="submitRequested && f.costProduct.errors">
+        <ion-label>ราคาต้นทุน : </ion-label>
+        <ion-input formControlName="costProduct" type="text" placeholder="ราคาต้นทุน" [readonly]="getRead"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="submitRequested && f.costProduct.errors">
+        <span class="invalid-msg">
+          กรอกราคาต้นทุน
+        </span>
+      </ion-item>
+    </ion-col>
+
+    <ion-col>
+      <ion-item class="border-ion-item" [class.invalid]="submitRequested && f.saleProduct.errors">
+        <ion-label>ราคาขายปกติ : </ion-label>
+        <ion-input formControlName="saleProduct" type="text" placeholder="ราคาขายปกติ" [readonly]="getRead"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="submitRequested && f.saleProduct.errors">
+        <span class="invalid-msg">
+          กรอกราคาขายปกติ
+        </span>
+      </ion-item>
+    </ion-col>
+
+    <ion-col>
+      <ion-item class="border-ion-item" [class.invalid]="submitRequested && f.saleVIPProduct.errors">
+        <ion-label>ราคาขายVIP : </ion-label>
+        <ion-input formControlName="saleVIPProduct" type="text" placeholder="ราคาขายVIP" [readonly]="getRead"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="submitRequested && f.saleVIPProduct.errors">
+        <span class="invalid-msg">
+          กรอกราคาขายVIP
+        </span>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="4">
+      <ion-item class="border-ion-item" [class.invalid]="submitRequested && f.saleVVIPProduct.errors">
+        <ion-label>ราคาขายVVIP : </ion-label>
+        <ion-input formControlName="saleVVIPProduct" type="text" placeholder="ราคาขายVVIP" [readonly]="getRead"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="submitRequested && f.saleVVIPProduct.errors">
+        <span class="invalid-msg">
+          กรอกราคาขายVVIP
+        </span>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="4">
+      <ion-item class="border-ion-item" [class.invalid]="submitRequested && f.saleVVVIPProduct.errors">
+        <ion-label>ราคาขายVVVIP : </ion-label>
+        <ion-input formControlName="saleVVVIPProduct" type="text" placeholder="ราคาขายVVVIP" [readonly]="getRead"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="submitRequested && f.saleVVVIPProduct.errors">
+        <span class="invalid-msg">
+          กรอกราคาขายVVVIP
+        </span>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-button [disabled]="!productData.valid" color="success" type="submit">ตกลง</ion-button>
+</form>
+
+</ion-content>

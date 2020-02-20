@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>StoreAdd</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center>
+  <br>
+  <ion-row>
+    <ion-col>
+      <ion-item class="border-ion-item">
+        <ion-label>รหัสสินค้า : </ion-label>
+        <ion-input [(ngModel)]="data.idProduct" type="text" (ionChange)="getProductByid($event)" placeholder="รหัสสินค้า"></ion-input>
+      </ion-item>
+    </ion-col>
+
+    <ion-col *ngIf="productByid == null">
+      <ion-item class="border-ion-item">
+        <ion-label>ชื่อสินค้า : </ion-label>
+        <ion-input  type="text" placeholder="ชื่อสินค้า"></ion-input>
+      </ion-item>
+    </ion-col>
+
+    <ion-col *ngIf="productByid != null">
+      <ion-item class="border-ion-item">
+        <ion-label>ชื่อสินค้า :  </ion-label>
+        <ion-input readonly type="text">{{ productByid.nameProduct }}</ion-input>
+      </ion-item>
+    </ion-col>
+
+    <ion-col>
+      <ion-item class="border-ion-item">
+        <ion-label>จำนวนสินค้าเข้า : </ion-label>
+        <ion-input [(ngModel)]="data.amountProduct" type="text" placeholder="จำนวนสินค้าเข้า"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-button (click)="addDataStore()">ตกลง</ion-button>
+</ion-content>

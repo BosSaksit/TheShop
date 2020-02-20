@@ -1,14 +1,46 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title text-center>
       Ionic Blank
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
+<ion-content class="ion-text-center" class="ion-padding">
+  <div>
     The world is your oyster.
     <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
   </div>
+  <ion-button (click)="openFirst()">OpenMenu</ion-button>
+  <br>
+  <ion-menu-toggle>
+    <ion-button>toggle</ion-button>
+  </ion-menu-toggle>
+
+  <ion-row>
+    <ion-col *ngFor="let m of menu" size="3">
+      <ion-card [routerLink]="[m.url]" style="background-color: rgb(54, 54, 54);">   
+          <ion-item class="ion-text-center">
+            <h3 style="margin-left: 80px;">{{ m.title }}</h3>
+          </ion-item>     
+        <ion-card-content>
+         <img style="width: 50%; margin-left: 75px;" src="{{ m.icon }}">
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <br><br><br>
+  <ion-item no-lines>
+    <ion-button fill="outline" (click)="minus()">-</ion-button>
+    <p>{{num}}</p>       
+    <ion-button fill="outline" (click)="add()">+</ion-button>
+    <!-- <button ion-button>Add to cart</button> -->
+ </ion-item>
 </ion-content>
+

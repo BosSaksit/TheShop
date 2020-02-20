@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar text-center>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>StoreList</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col></ion-col>
+    <ion-col text-end>
+      <ion-button (click)="toStoreAdd()">เพิ่มสินค้าในคลัง
+        <ion-icon slot="start" name="add"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col size="6">
+      <ion-searchbar placeholder="ค้นหาชื่อสินค้า"></ion-searchbar>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+
+  <ion-row text-center>
+    <ion-col>
+      <h5>รหัสสินค้า</h5>
+    </ion-col>
+    <ion-col>
+      <h5>ชื่อสินค้า</h5>
+    </ion-col>
+    <ion-col>
+      <h5>จำนวนสินค้าเข้า</h5>
+    </ion-col>
+    <ion-col>
+      <h5>จำนวนสินค้าคงเหลือ</h5>
+    </ion-col>
+    <ion-col>
+      <h5>ดูข้อมูล</h5>
+    </ion-col>
+    <ion-col>
+      <h5>ลบ</h5>
+    </ion-col>
+  </ion-row>
+
+  <ion-row text-center *ngFor="let s of dataAllstore">
+    <ion-col>
+      <h5>{{ s.idProduct }}</h5>
+    </ion-col>
+    <ion-col>
+      <h5>{{ s.nameProduct }}</h5>
+    </ion-col>
+    <ion-col>
+      <h5>{{ s.amountProduct }}</h5>
+    </ion-col>
+    <ion-col>
+      <h5>{{ s.totalProduct }}</h5>
+    </ion-col>
+    <ion-col>
+      <ion-button>
+        <ion-icon name="eye"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button>
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>
